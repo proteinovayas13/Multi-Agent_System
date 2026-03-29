@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: langgraph-service
+  labels:
+    app: langgraph-orchestrator
+spec:
+  selector:
+    app: langgraph-orchestrator
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: LoadBalancer

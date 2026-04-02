@@ -151,26 +151,33 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Примеры запросов
+    # Примеры запросов (на русском языке)
     st.header("💡 Примеры запросов")
     
-    with st.expander("📚 RAG Agent"):
-        st.markdown("- What is Kubernetes?")
-        st.markdown("- Tell me about LangGraph")
-        st.markdown("- What is Docker?")
-        st.markdown("- Explain Python")
+    with st.expander("📚 RAG Agent (поиск информации)"):
+        st.markdown("- Что такое Kubernetes?")
+        st.markdown("- Расскажи про LangGraph")
+        st.markdown("- Как работает Docker?")
+        st.markdown("- Объясни Python")
+        st.markdown("- Где посмотреть логи?")
+        st.markdown("- Как запустить проект?")
+        st.markdown("- Какие технологии используются?")
     
-    with st.expander("🗄️ SQL Agent"):
+    with st.expander("🗄️ SQL Agent (работа с базой данных)"):
         st.markdown("- SELECT * FROM users")
-        st.markdown("- Show me all orders")
-        st.markdown("- SELECT city, COUNT(*) FROM users GROUP BY city")
-        st.markdown("- Show users from Moscow")
+        st.markdown("- Покажи всех пользователей")
+        st.markdown("- Сколько пользователей в Москве?")
+        st.markdown("- Топ 5 самых дорогих заказов")
+        st.markdown("- Статистика заказов по статусам")
+        st.markdown("- Пользователи из Санкт-Петербурга")
     
-    with st.expander("💬 Chat Agent"):
-        st.markdown("- Hello, how are you?")
-        st.markdown("- What can you do?")
-        st.markdown("- Help me")
-        st.markdown("- Thank you")
+    with st.expander("💬 Chat Agent (общение)"):
+        st.markdown("- Привет, как дела?")
+        st.markdown("- Что ты умеешь?")
+        st.markdown("- Помоги мне")
+        st.markdown("- Расскажи о себе")
+        st.markdown("- Спасибо за помощь")
+        st.markdown("- Пока")
     
     st.markdown("---")
     
@@ -198,7 +205,7 @@ st.header("💬 Чат с ассистентом")
 # Инициализация истории сообщений
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hello! I'm LangGraph Assistant. I have 3 specialized agents:\n\n📚 **RAG Agent** - search for information\n🗄️ **SQL Agent** - work with databases\n💬 **Chat Agent** - conversation\n\nHow can I help you today?"}
+        {"role": "assistant", "content": "Привет! Я LangGraph Assistant. У меня есть 3 специализированных агента:\n\n📚 **RAG Agent** - поиск информации по документам\n🗄️ **SQL Agent** - работа с базой данных\n💬 **Chat Agent** - диалоговый ассистент\n\nЧем я могу вам помочь?"}
     ]
 if "session_id" not in st.session_state:
     import uuid
@@ -210,7 +217,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # Обработка ввода
-if prompt := st.chat_input("Enter your message..."):
+if prompt := st.chat_input("Введите ваше сообщение..."):
     # Добавляем сообщение пользователя
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -218,7 +225,7 @@ if prompt := st.chat_input("Enter your message..."):
     
     # Отправляем запрос к API
     with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
+        with st.spinner("Думаю..."):
             try:
                 response = requests.post(
                     f"{API_URL}/chat",
@@ -229,11 +236,11 @@ if prompt := st.chat_input("Enter your message..."):
                     timeout=30
                 )
                 if response.status_code == 200:
-                    answer = response.json().get("response", "No response")
+                    answer = response.json().get("response", "Нет ответа")
                 else:
-                    answer = f"Error: {response.status_code}"
+                    answer = f"Ошибка: {response.status_code}"
             except Exception as e:
-                answer = f"Error: {e}"
+                answer = f"Ошибка: {e}"
             
             st.markdown(answer)
             st.session_state.messages.append({"role": "assistant", "content": answer})
@@ -243,5 +250,4 @@ if prompt := st.chat_input("Enter your message..."):
         st.session_state.messages = st.session_state.messages[-50:]
 
 # Footer
-st.markdown("---")
-st.markdown("🚀 LangGraph Agent | Powered by LangGraph + Elasticsearch + Kubernetes | 3 Agents: RAG, SQL, Chat")
+st.markdown("🚀 LangGraph Agent | Powered by LangGraph + Elasticsearch + Kubernetes | 3 агента: RAG, SQL, Chat")

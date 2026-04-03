@@ -327,6 +327,7 @@ with open('file.txt', 'rb') as f:
 
 -Документация API (Swagger)
 
+## Упаковка https://railway.com/workspace/upgrade (30 дней бесплатного пользования, дальше 5 $.
 -Веб-интерфейс на Streamlit
 
 -Интеграция с PostgreSQL и Elasticsearch

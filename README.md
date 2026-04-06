@@ -317,16 +317,6 @@ with open('file.txt', 'rb') as f:
     files = {'file': f}
     response = requests.post('http://localhost:8000/upload', files=files)
 
-
-### Результаты
--3 работающих агента (RAG, SQL, Chat)
-
--Полноценный мониторинг в Grafana
-
--Развертывание в Kubernetes
-
--Документация API (Swagger)
-
 ## Упаковка https://railway.com/workspace/upgrade (30 дней бесплатного пользования, дальше 5 $.
 -Веб-интерфейс на Streamlit
 

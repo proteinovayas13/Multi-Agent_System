@@ -317,7 +317,8 @@ with open('file.txt', 'rb') as f:
     files = {'file': f}
     response = requests.post('http://localhost:8000/upload', files=files)
 
-## Упаковка https://railway.com/workspace/upgrade (30 дней бесплатного пользования, дальше 5 $.
+
+# Упаковка https://railway.com/workspace/upgrade (30 дней бесплатного пользования, дальше 5 $.
 -Веб-интерфейс на Streamlit
 
 -Интеграция с PostgreSQL и Elasticsearch

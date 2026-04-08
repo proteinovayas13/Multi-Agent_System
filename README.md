@@ -12,7 +12,7 @@
 
 **Мультиагентная система на основе LangGraph с оркестрацией в Kubernetes**
 
-[Документация](https://github.com/your-username/langgraph-agent) | [Демо](https://youtu.be/your-video) | [API Reference](http://localhost:8000/docs)
+[Документация](https://github.com/your-username/langgraph-agent) | [Демо]([https://youtube.com/shorts/wrsNgsw41LU?si=5tRZj8XAlcaQAcrI) | [API Reference](http://localhost:8000/docs)]
 
 </div>
 

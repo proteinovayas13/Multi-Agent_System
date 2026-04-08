@@ -1,5 +1,5 @@
-# LangGraph Multi-Agent System
-
+# LangGraph Multi-Agent System - собственная LLM.
+### Предстваила что у меня компания 
 
 ![LangGraph Agent](https://img.shields.io/badge/LangGraph-Agent-blue)
 ![Python](https://img.shields.io/badge/Python-3.12-green)
@@ -13,7 +13,7 @@
 **Мультиагентная система на основе LangGraph с оркестрацией в Kubernetes**
 
 [Документация](https://github.com/your-username/langgraph-agent) |  | [API Reference](http://localhost:8000/docs)]
-
+ДОКУМЕНТАЦИЯ и НАСТРОЕННЫЕ ДАШБОРДЫ В GRAFANA на тестовых данных- можете спросить у моего RAG агента после локального запуска- 
 DEMO (видео на Youtube) - https://youtube.com/shorts/wrsNgsw41LU?si=5tRZj8XAlcaQAcrI
 
 </div>
@@ -269,23 +269,28 @@ kubectl delete namespace langgraph
 
 Структура проекта
 
-langgraph-agent/
+Multi-Agent_System/
+├── .github/
+│ └── workflows/ # GitHub Actions CI/CD пайплайны
 ├── src/
-│   ├── agents/
-│   │   ├── rag_agent.py          # RAG агент
-│   │   ├── sql_agent.py          # SQL агент
-│   │   └── chat_agent.py         # Chat агент
-│   ├── orchestrator/
-│   │   └── orchestrator.py       # LangGraph оркестратор
-│   └── api.py                     # FastAPI сервер
-├── k8s/
-│   ├── deployment.yaml            # Kubernetes deployment
-│   └── service.yaml               # Kubernetes service
-├── docker-compose.yml             # Docker Compose для сервисов
-├── streamlit_app.py               # Веб-интерфейс
-├── Dockerfile                     # Конфигурация Docker
-├── requirements.txt               # Зависимости Python
-└── README.md                      # Документация
+│ ├── agents/ # Агенты LangGraph
+│ │ ├── init.py
+│ │ ├── rag_agent.py # RAG агент (Elasticsearch)
+│ │ ├── sql_agent.py # SQL агент (PostgreSQL)
+│ │ └── chat_agent.py # Chat агент (диалоговый)
+│ ├── orchestrator/ # Оркестратор LangGraph
+│ │ ├── init.py
+│ │ └── orchestrator.py # Маршрутизация запросов
+│ └── api.py # FastAPI сервер (Port 8000)
+├── k8s/ # Kubernetes манифесты
+│ ├── deployment.yaml
+│ └── service.yaml
+├── k8s-backup/ # Резервные копии манифестов
+├── streamlit_app.py # Веб-интерфейс (Port 8501)
+├── docker-compose.yml # Локальный запуск сервисов
+├── Dockerfile # Сборка образа
+├── requirements.txt # Python зависимости
+└── README.md # Документация
 
 
 Устранение неполадок

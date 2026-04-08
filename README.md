@@ -319,6 +319,9 @@ with open('file.txt', 'rb') as f:
 
 
 # Упаковка https://railway.com/workspace/upgrade (30 дней бесплатного пользования, дальше 5 $.
++++++Подрутить туда парсер
 -Веб-интерфейс на Streamlit
 
 -Интеграция с PostgreSQL и Elasticsearch
+
+Подрутить туда парсер

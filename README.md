@@ -1,4 +1,4 @@
-# LangGraph Multi-Agent System - собственная LLM.
+# LangGraph Multi-Agent System.
 ### Предстваила что у меня компания 
 
 ![LangGraph Agent](https://img.shields.io/badge/LangGraph-Agent-blue)

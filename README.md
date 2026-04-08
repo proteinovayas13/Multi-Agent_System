@@ -8,7 +8,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
 ![Grafana](https://img.shields.io/badge/Grafana-Monitoring-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![License](https://youtube.com/shorts/wrsNgsw41LU?si=5tRZj8XAlcaQAcrI)
 
 **Мультиагентная система на основе LangGraph с оркестрацией в Kubernetes**
 
